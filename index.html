@@ -68,6 +68,17 @@
       margin: 0 auto;
     }
 
+    .tagline {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 8px 14px;
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 999px;
+      color: #dbeafe;
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
     .hero h1 {
       font-size: clamp(2.3rem, 5vw, 4.6rem);
       line-height: 1.05;
@@ -77,10 +88,16 @@
 
     .hero p {
       max-width: 760px;
-      margin: 0 auto 30px;
+      margin: 0 auto 18px;
       font-size: 1.2rem;
       line-height: 1.6;
       color: #dbeafe;
+    }
+
+    .urgency {
+      font-weight: 800;
+      color: white;
+      margin-bottom: 30px !important;
     }
 
     .btn {
@@ -92,6 +109,12 @@
       font-weight: 800;
       text-decoration: none;
       border: 2px solid white;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.22);
     }
 
     .btn.secondary {
@@ -244,6 +267,18 @@
       text-align: center;
       margin-top: 22px;
     }
+
+    @media (max-width: 520px) {
+      .btn {
+        display: block;
+        margin: 10px auto 0;
+        max-width: 280px;
+      }
+
+      .btn.secondary {
+        margin-left: auto;
+      }
+    }
   </style>
 </head>
 
@@ -252,18 +287,26 @@
   <header>
     <div class="nav">
       <div class="brand">ShieldStone Group</div>
-      <a href="#contact">Get a Free AI Risk Check</a>
+      <a href="#contact">Free AI Risk Check</a>
     </div>
   </header>
 
   <section class="hero">
     <div class="hero-inner">
+      <div class="tagline">Built for small and mid-size businesses adopting AI without formal policy</div>
+
       <h1>Your Team Is Already Using AI. Do You Know the Risk?</h1>
+
       <p>
         ShieldStone Group helps businesses identify unsafe AI usage, protect sensitive information,
         and put simple policies in place before small mistakes become expensive problems.
       </p>
-      <a class="btn" href="#contact">Get a Free AI Risk Check</a>
+
+      <p class="urgency">
+        Most companies already have AI risk — they just don’t know it yet.
+      </p>
+
+      <a class="btn" href="#contact">Get Your Free AI Risk Check</a>
       <a class="btn secondary" href="#review">See What We Review</a>
     </div>
   </section>
@@ -401,15 +444,15 @@
 
   <section id="contact" class="cta">
     <div class="wrap">
-      <h2>Get a Free AI Risk Check</h2>
+      <h2>Get Your Free AI Risk Check</h2>
       <p>
         If your business is using AI tools and you do not have a clear policy in place,
         now is the time to get ahead of it.
       </p>
 
-      <!-- Replace this email or button link later with Calendly, Google Form, or a booking page -->
+      <!-- Replace this later with Calendly if you want -->
       <a class="btn" href="mailto:contact@shieldstonegroup.com?subject=Free AI Risk Check">
-        Contact ShieldStone Group
+        Schedule Your Free AI Risk Check
       </a>
     </div>
   </section>
