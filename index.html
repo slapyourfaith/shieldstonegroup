@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ShieldStone Group | AI Risk & Compliance</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color-scheme: light;
+      --navy: #071f33;
+      --blue: #0f3b5f;
+      --light: #f4f7fb;
+      --text: #172033;
+      --muted: #5b667a;
+      --border: #d9e2ec;
+      --accent: #1f6feb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--light);
+      color: var(--text);
+    }
+
+    header {
+      background: var(--navy);
+      color: white;
+      padding: 18px 20px;
+    }
+
+    .nav {
+      max-width: 1050px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand {
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: 0.03em;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      color: white;
+      padding: 80px 20px 88px;
+      text-align: center;
+    }
+
+    .hero-inner {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.3rem, 5vw, 4.6rem);
+      line-height: 1.05;
+      margin: 0 0 22px;
+      font-weight: 900;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0 auto 30px;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #dbeafe;
+    }
+
+    .btn {
+      display: inline-block;
+      background: white;
+      color: var(--navy);
+      padding: 15px 24px;
+      border-radius: 999px;
+      font-weight: 800;
+      text-decoration: none;
+      border: 2px solid white;
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: white;
+      margin-left: 10px;
+    }
+
+    section {
+      padding: 64px 20px;
+    }
+
+    .wrap {
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: clamp(1.9rem, 3vw, 2.7rem);
+      line-height: 1.15;
+      margin: 0 0 16px;
+      text-align: center;
+    }
+
+    .intro {
+      max-width: 760px;
+      margin: 0 auto 36px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    @media (min-width: 760px) {
+      .grid.three {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .grid.two {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 12px 26px rgba(10, 31, 51, 0.08);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.25rem;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .offer {
+      background: white;
+    }
+
+    .offer-box {
+      max-width: 820px;
+      margin: 0 auto;
+      background: var(--navy);
+      color: white;
+      border-radius: 22px;
+      padding: 32px;
+      box-shadow: 0 16px 36px rgba(10, 31, 51, 0.22);
+    }
+
+    .offer-box h3 {
+      font-size: 1.7rem;
+      margin: 0 0 12px;
+    }
+
+    .offer-box p,
+    .offer-box li {
+      color: #dbeafe;
+      line-height: 1.65;
+    }
+
+    .steps {
+      counter-reset: step;
+    }
+
+    .step {
+      position: relative;
+      padding-left: 58px;
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 22px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, var(--blue), var(--navy));
+      color: white;
+      text-align: center;
+    }
+
+    .cta p {
+      color: #dbeafe;
+      max-width: 720px;
+      margin: 0 auto 26px;
+      line-height: 1.6;
+      font-size: 1.08rem;
+    }
+
+    footer {
+      background: #061827;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 0.9rem;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      color: #6b7280;
+      text-align: center;
+      margin-top: 22px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="nav">
+      <div class="brand">ShieldStone Group</div>
+      <a href="#contact">Get a Free AI Risk Check</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Your Team Is Already Using AI. Do You Know the Risk?</h1>
+      <p>
+        ShieldStone Group helps businesses identify unsafe AI usage, protect sensitive information,
+        and put simple policies in place before small mistakes become expensive problems.
+      </p>
+      <a class="btn" href="#contact">Get a Free AI Risk Check</a>
+      <a class="btn secondary" href="#review">See What We Review</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Most Companies Are Winging It With AI</h2>
+      <p class="intro">
+        Tools like ChatGPT, Claude, Gemini, and Copilot are already being used inside businesses.
+        The problem is that most teams have little visibility, no clear rules, and no simple process
+        for safe usage.
+      </p>
+
+      <div class="grid three">
+        <div class="card">
+          <h3>No Clear Policy</h3>
+          <p>
+            Employees use AI however they want because nobody has defined what is approved,
+            what is risky, and what should never be entered.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Data Exposure</h3>
+          <p>
+            Customer information, internal documents, financial details, or private business data
+            may be copied into AI tools without anyone realizing it.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>No Visibility</h3>
+          <p>
+            Leadership often has no idea which tools are being used, who is using them,
+            or whether the outputs are being reviewed before use.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="review" class="offer">
+    <div class="wrap">
+      <h2>Start With an AI Risk Review</h2>
+      <p class="intro">
+        A practical review designed to show where your company is exposed and what to fix first.
+      </p>
+
+      <div class="offer-box">
+        <h3>AI Risk Review</h3>
+        <p>
+          We take a closer look at how your team is using AI tools, identify risky habits,
+          and give you a simple action plan your business can actually use.
+        </p>
+
+        <ul>
+          <li>Review of current AI tool usage</li>
+          <li>Identification of unsafe data practices</li>
+          <li>Clear risk summary and prioritized action steps</li>
+          <li>Simple internal AI usage policy</li>
+          <li>Typical turnaround: 3–5 business days</li>
+        </ul>
+      </div>
+
+      <p class="note">
+        The free call is used to understand your situation. The full review is a paid service.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>How It Works</h2>
+      <p class="intro">
+        Simple, practical, and built for busy businesses that need clarity without a long consulting process.
+      </p>
+
+      <div class="grid three steps">
+        <div class="card step">
+          <h3>Free Risk Check</h3>
+          <p>
+            We ask a few direct questions about how your team is currently using AI and whether
+            there are obvious gaps.
+          </p>
+        </div>
+
+        <div class="card step">
+          <h3>Paid Review</h3>
+          <p>
+            If there is a real need, we perform a deeper review and gather the information needed
+            to understand your AI usage.
+          </p>
+        </div>
+
+        <div class="card step">
+          <h3>Report + Policy</h3>
+          <p>
+            You receive a clear report, practical recommendations, and a simple AI usage policy
+            your team can follow.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>What We Help Prevent</h2>
+
+      <div class="grid two">
+        <div class="card">
+          <h3>Common AI Risks</h3>
+          <ul>
+            <li>Employees using personal AI accounts for work</li>
+            <li>Sensitive information being entered into public tools</li>
+            <li>AI-generated content being used without review</li>
+            <li>No approved tool list or usage standards</li>
+            <li>No documentation if questions come up later</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>What You Walk Away With</h3>
+          <ul>
+            <li>A clearer picture of how AI is being used</li>
+            <li>Simple rules your team can understand</li>
+            <li>Action steps to reduce avoidable risk</li>
+            <li>A foundation for future AI governance</li>
+            <li>Confidence that you are no longer guessing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="cta">
+    <div class="wrap">
+      <h2>Get a Free AI Risk Check</h2>
+      <p>
+        If your business is using AI tools and you do not have a clear policy in place,
+        now is the time to get ahead of it.
+      </p>
+
+      <!-- Replace this email or button link later with Calendly, Google Form, or a booking page -->
+      <a class="btn" href="mailto:contact@shieldstonegroup.com?subject=Free AI Risk Check">
+        Contact ShieldStone Group
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    ShieldStone Group &copy; <span id="year"></span> | AI Safety & Compliance Solutions
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
