@@ -1,498 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Services | ShieldStone Group</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8" />
+<title>Services | ShieldStone Group</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <style>
-    :root {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      --navy: #071f33;
-      --blue: #0f3b5f;
-      --light: #f4f7fb;
-      --text: #172033;
-      --muted: #5b667a;
-      --border: #d9e2ec;
-      --accent: #1f6feb;
-    }
+<style>
+body { font-family:sans-serif; margin:0; background:#f4f7fb; }
 
-    * { box-sizing: border-box; }
+header {
+  background:#071f33;
+  color:white;
+  padding:20px;
+  display:flex;
+  justify-content:space-between;
+}
 
-    body {
-      margin: 0;
-      background: var(--light);
-      color: var(--text);
-    }
+a { color:white; text-decoration:none; font-weight:bold; }
 
-    header {
-      background: var(--navy);
-      color: white;
-      padding: 18px 20px;
-    }
+section { padding:60px 20px; max-width:1000px; margin:auto; }
 
-    .nav {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-    }
+.card {
+  background:white;
+  padding:20px;
+  border-radius:12px;
+  margin-bottom:20px;
+}
 
-    .brand {
-      font-weight: 800;
-      font-size: 1.15rem;
-      letter-spacing: 0.03em;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 22px;
-      align-items: center;
-    }
-
-    .nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.95rem;
-    }
-
-    .hero {
-      background:
-        linear-gradient(90deg, rgba(7,31,51,0.98) 0%, rgba(7,31,51,0.92) 48%, rgba(7,31,51,0.65) 100%),
-        url("hero-shield.png");
-      background-size: cover;
-      background-position: center right;
-      color: white;
-      padding: 86px 20px 94px;
-    }
-
-    .hero-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      max-width: 1100px;
-    }
-
-    .hero-content {
-      max-width: 760px;
-    }
-
-    .tagline {
-      display: inline-block;
-      margin-bottom: 18px;
-      padding: 8px 14px;
-      border: 1px solid rgba(255,255,255,0.35);
-      border-radius: 999px;
-      color: #dbeafe;
-      font-weight: 700;
-      font-size: 0.92rem;
-      background: rgba(255,255,255,0.08);
-    }
-
-    h1 {
-      font-size: clamp(2.4rem, 5vw, 4.4rem);
-      line-height: 1.05;
-      margin: 0 0 22px;
-      font-weight: 900;
-    }
-
-    .hero p {
-      margin: 0 0 18px;
-      font-size: 1.18rem;
-      line-height: 1.6;
-      color: #dbeafe;
-    }
-
-    .btn {
-      display: inline-block;
-      background: white;
-      color: var(--navy);
-      padding: 15px 24px;
-      border-radius: 999px;
-      font-weight: 800;
-      text-decoration: none;
-      border: 2px solid white;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.22);
-    }
-
-    .btn.secondary {
-      background: transparent;
-      color: white;
-      margin-left: 10px;
-    }
-
-    section {
-      padding: 64px 20px;
-    }
-
-    .soft {
-      background: white;
-    }
-
-    .wrap {
-      max-width: 1050px;
-      margin: 0 auto;
-    }
-
-    h2 {
-      font-size: clamp(1.9rem, 3vw, 2.6rem);
-      line-height: 1.15;
-      margin: 0 0 16px;
-      text-align: center;
-    }
-
-    .intro {
-      max-width: 800px;
-      margin: 0 auto 36px;
-      color: var(--muted);
-      text-align: center;
-      font-size: 1.05rem;
-      line-height: 1.6;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
-    }
-
-    @media (min-width: 760px) {
-      .grid.two { grid-template-columns: repeat(2, 1fr); }
-      .grid.three { grid-template-columns: repeat(3, 1fr); }
-    }
-
-    .card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 26px;
-      box-shadow: 0 12px 26px rgba(10, 31, 51, 0.08);
-    }
-
-    .soft .card {
-      background: #f9fbfe;
-    }
-
-    .card h3 {
-      margin: 0 0 10px;
-      font-size: 1.3rem;
-    }
-
-    .card p,
-    .card li {
-      color: var(--muted);
-      line-height: 1.6;
-      font-size: 1rem;
-    }
-
-    ul {
-      margin: 12px 0 0;
-      padding-left: 20px;
-    }
-
-    .featured {
-      background: var(--navy);
-      color: white;
-    }
-
-    .featured h3,
-    .featured p,
-    .featured li {
-      color: white;
-    }
-
-    .featured li {
-      color: #dbeafe;
-    }
-
-    .label {
-      display: inline-block;
-      margin-bottom: 12px;
-      padding: 6px 10px;
-      background: rgba(31,111,235,0.12);
-      color: var(--accent);
-      border-radius: 999px;
-      font-weight: 800;
-      font-size: 0.82rem;
-    }
-
-    .featured .label {
-      background: rgba(255,255,255,0.12);
-      color: #bfdbfe;
-    }
-
-    .cta {
-      background: linear-gradient(135deg, var(--blue), var(--navy));
-      color: white;
-      text-align: center;
-    }
-
-    .cta p {
-      color: #dbeafe;
-      max-width: 740px;
-      margin: 0 auto 26px;
-      line-height: 1.6;
-      font-size: 1.08rem;
-    }
-
-    footer {
-      background: #061827;
-      color: #cbd5e1;
-      text-align: center;
-      padding: 28px 20px;
-      font-size: 0.9rem;
-      line-height: 1.6;
-    }
-
-    footer span {
-      display: block;
-      max-width: 900px;
-      margin: 8px auto 0;
-      color: #94a3b8;
-      font-size: 0.82rem;
-    }
-
-    @media (max-width: 700px) {
-      .hero {
-        background:
-          linear-gradient(180deg, rgba(7,31,51,0.98), rgba(7,31,51,0.88)),
-          url("hero-shield.png");
-        background-size: cover;
-        background-position: center;
-        text-align: center;
-      }
-
-      .btn {
-        display: block;
-        margin: 10px auto 0;
-        max-width: 315px;
-      }
-
-      .btn.secondary {
-        margin-left: auto;
-      }
-
-      .nav {
-        flex-direction: column;
-      }
-
-      .nav-links {
-        gap: 16px;
-      }
-    }
-  </style>
+.cta {
+  text-align:center;
+  background:#0f3b5f;
+  color:white;
+  padding:50px 20px;
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <div class="nav">
-      <div class="brand">ShieldStone Group</div>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="#contact">Schedule a Call</a>
-      </div>
-    </div>
-  </header>
+<header>
+  <div>ShieldStone Group</div>
+  <a href="https://calendly.com/shieldstonegroup/ai-risk-compliance-audit-call" target="_blank">
+    Schedule a Call
+  </a>
+</header>
 
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-content">
-        <div class="tagline">Services built around real-world AI risk</div>
+<section>
+  <h1>Services</h1>
 
-        <h1>AI Risk, Policy, Training, and Support</h1>
+  <div class="card">
+    <h3>AI Risk Review</h3>
+    <p>Identify risk, usage, and exposure.</p>
+  </div>
 
-        <p>
-          ShieldStone Group helps organizations move from unmanaged AI usage to clear internal standards,
-          safer workflows, trained teams, and ongoing support.
-        </p>
+  <div class="card">
+    <h3>Policy Setup</h3>
+    <p>Create internal AI rules.</p>
+  </div>
 
-        <a class="btn" href="#contact">Book a 15-Minute Risk Call</a>
-        <a class="btn secondary" href="index.html">Back to Home</a>
-      </div>
-    </div>
-  </section>
+  <div class="card">
+    <h3>Training</h3>
+    <p>Teach safe AI usage.</p>
+  </div>
 
-  <section>
-    <div class="wrap">
-      <h2>Core Services</h2>
-      <p class="intro">
-        Start with the review. Then build the structure your team needs based on the risks uncovered.
-      </p>
+  <div class="card">
+    <h3>Ongoing Support</h3>
+    <p>Retainer-based guidance.</p>
+  </div>
 
-      <div class="grid two">
-        <div class="card featured">
-          <span class="label">Best Starting Point</span>
-          <h3>AI Risk Review</h3>
-          <p>
-            A focused review of how your organization is currently using AI tools and where risk may exist.
-          </p>
-          <ul>
-            <li>Review current AI tool usage</li>
-            <li>Identify risky habits and unsafe data practices</li>
-            <li>Assess gaps in policy, visibility, and oversight</li>
-            <li>Deliver a clear risk summary and prioritized action steps</li>
-            <li>Provide a simple internal AI usage policy</li>
-          </ul>
-        </div>
+  <div class="card">
+    <h3>Incident Response</h3>
+    <p>Help when something goes wrong.</p>
+  </div>
 
-        <div class="card">
-          <span class="label">Policy & Structure</span>
-          <h3>AI Policy Setup</h3>
-          <p>
-            Build clear internal rules so your team knows what is approved, what is risky, and what should not be done.
-          </p>
-          <ul>
-            <li>Approved and unapproved AI tool guidance</li>
-            <li>Sensitive data rules</li>
-            <li>Output review standards</li>
-            <li>Employee usage expectations</li>
-            <li>Department-specific guidelines when needed</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+</section>
 
-  <section class="soft">
-    <div class="wrap">
-      <h2>Training & Implementation</h2>
-      <p class="intro">
-        Policies only help if people understand them. Training turns written rules into real behavior.
-      </p>
+<section class="cta">
+  <h2>Start With a Call</h2>
 
-      <div class="grid three">
-        <div class="card">
-          <h3>Employee Training</h3>
-          <p>
-            Practical training sessions that explain safe AI usage, data risks, output review,
-            and everyday examples your team can understand.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Leadership Workshops</h3>
-          <p>
-            Sessions for owners, managers, and department leaders who need to oversee AI usage
-            and set clear expectations.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Policy Rollout Support</h3>
-          <p>
-            Help introducing the policy, communicating expectations, and making the process usable
-            across departments.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <h2>Ongoing Support & Response</h2>
-      <p class="intro">
-        AI does not stand still. Tools change, employees change, risks change, and questions come up.
-      </p>
-
-      <div class="grid two">
-        <div class="card">
-          <span class="label">Monthly Support</span>
-          <h3>AI Safety Retainer</h3>
-          <p>
-            Ongoing support for organizations that want continued guidance as AI usage grows.
-          </p>
-          <ul>
-            <li>Policy updates as tools and risks evolve</li>
-            <li>Periodic AI usage reviews</li>
-            <li>Guidance on new AI tools or workflows</li>
-            <li>Support for leadership questions</li>
-            <li>Continued improvement of internal AI standards</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <span class="label">When Something Goes Wrong</span>
-          <h3>AI Incident Response</h3>
-          <p>
-            Support when AI is used improperly, sensitive data may have been exposed, or leadership needs a quick response plan.
-          </p>
-          <ul>
-            <li>Immediate assessment of what happened</li>
-            <li>Identify tools, users, and possible data exposure</li>
-            <li>Containment guidance</li>
-            <li>Documentation and recovery steps</li>
-            <li>Policy updates to prevent repeat issues</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="soft">
-    <div class="wrap">
-      <h2>How Services Usually Flow</h2>
-      <p class="intro">
-        Most organizations should not start with everything. Start with clarity, then build from there.
-      </p>
-
-      <div class="grid three">
-        <div class="card">
-          <h3>1. Risk Review</h3>
-          <p>
-            Understand what your team is already doing with AI and where your biggest risks are.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>2. Policy + Training</h3>
-          <p>
-            Put simple standards in place and train the people who need to follow them.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>3. Ongoing Support</h3>
-          <p>
-            Keep policies, reviews, and leadership guidance current as AI usage changes.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="cta">
-    <div class="wrap">
-      <h2>Start With a 15-Minute AI Risk Call</h2>
-      <p>
-        The first step is not a massive consulting project. It is a short conversation to see whether
-        there are obvious gaps worth reviewing.
-      </p>
-
-      <a class="btn" href="mailto:contact@shieldstonegroup.com?subject=15-Minute AI Risk Call">
-        Schedule Your Risk Call
-      </a>
-    </div>
-  </section>
-
-  <footer>
-    ShieldStone Group &copy; <span id="year"></span> | AI Risk, Policy, Training & Response Support
-    <span>
-      ShieldStone Group provides operational AI risk guidance and policy support. We do not provide legal advice.
-    </span>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <a
+    href="https://calendly.com/shieldstonegroup/ai-risk-compliance-audit-call"
+    target="_blank"
+    style="background:white;color:#071f33;padding:14px 22px;border-radius:999px;">
+    Book Your Call
+  </a>
+</section>
 
 </body>
 </html>
