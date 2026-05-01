@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>ShieldStone Group | AI Risk, Policy & Compliance Support</title>
+  <title>ShieldStone Group | AI Risk & Compliance Support</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <style>
@@ -45,6 +45,12 @@
       font-weight: 800;
       font-size: 1.15rem;
       letter-spacing: 0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      align-items: center;
     }
 
     .nav a {
@@ -167,8 +173,6 @@
 
     @media (min-width: 760px) {
       .grid.three { grid-template-columns: repeat(3, 1fr); }
-      .grid.two { grid-template-columns: repeat(2, 1fr); }
-      .grid.four { grid-template-columns: repeat(4, 1fr); }
     }
 
     .card {
@@ -246,10 +250,6 @@
       font-weight: 900;
     }
 
-    .path-card {
-      border-top: 5px solid var(--accent);
-    }
-
     .cta {
       background: linear-gradient(135deg, var(--blue), var(--navy));
       color: white;
@@ -269,6 +269,17 @@
       color: #6b7280;
       text-align: center;
       margin-top: 22px;
+    }
+
+    .services-link {
+      text-align: center;
+      margin-top: 26px;
+    }
+
+    .services-link a {
+      color: var(--accent);
+      font-weight: 800;
+      text-decoration: none;
     }
 
     footer {
@@ -315,6 +326,10 @@
       .nav {
         flex-direction: column;
       }
+
+      .nav-links {
+        gap: 16px;
+      }
     }
   </style>
 </head>
@@ -324,7 +339,10 @@
   <header>
     <div class="nav">
       <div class="brand">ShieldStone Group</div>
-      <a href="#contact">Schedule a Call</a>
+      <div class="nav-links">
+        <a href="services.html">Services</a>
+        <a href="#contact">Schedule a Call</a>
+      </div>
     </div>
   </header>
 
@@ -355,39 +373,6 @@
   </section>
 
   <section>
-    <div class="wrap">
-      <h2>Who We Help</h2>
-      <p class="intro">
-        ShieldStone Group works with businesses, nonprofits, teams, and organizations adopting AI without clear internal rules,
-        visibility, employee training, or response plans.
-      </p>
-
-      <div class="grid three">
-        <div class="card">
-          <h3>Organizations Using AI Informally</h3>
-          <p>
-            Your team may already be using AI tools for writing, research, operations, customer communication, or admin work.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Leaders Without Visibility</h3>
-          <p>
-            You may not know which tools are being used, what data is being entered, or whether outputs are being reviewed.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Teams That Need Structure</h3>
-          <p>
-            We help turn “everyone doing their own thing” into clear standards your organization can actually follow.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="soft">
     <div class="wrap">
       <h2>Most Companies Are Winging It With AI</h2>
       <p class="intro">
@@ -423,18 +408,19 @@
     </div>
   </section>
 
-  <section id="review">
+  <section id="review" class="soft">
     <div class="wrap">
       <h2>Start With an AI Risk Review</h2>
       <p class="intro">
-        A practical review designed to show where your organization is exposed and what to fix first.
+        A practical review designed to show where your organization is exposed, what needs to change,
+        and what steps should happen next.
       </p>
 
       <div class="offer-box">
         <h3>AI Risk Review</h3>
         <p>
-          We take a closer look at how your team is using AI tools, identify risky habits,
-          and give you a simple action plan your business can actually use.
+          We take a focused look at how your team is using AI tools, identify risk areas,
+          and give you a clear action plan your organization can actually use.
         </p>
 
         <ul>
@@ -443,8 +429,7 @@
           <li>Identification of unsafe data practices</li>
           <li>Clear risk summary and prioritized action steps</li>
           <li>Simple internal AI usage policy</li>
-          <li>Recommended next steps for training, implementation, or ongoing support</li>
-          <li>Typical turnaround: 3–5 business days</li>
+          <li>Recommendations for training, implementation, or ongoing support</li>
         </ul>
       </div>
 
@@ -454,177 +439,47 @@
     </div>
   </section>
 
-  <section class="soft">
-    <div class="wrap">
-      <h2>The ShieldStone Path</h2>
-      <p class="intro">
-        We are not here to make AI complicated. We help organizations move from uncertainty to structure.
-      </p>
-
-      <div class="grid four">
-        <div class="card path-card">
-          <h3>1. Risk Review</h3>
-          <p>
-            Identify how AI is being used, where exposure exists, and what needs to change first.
-          </p>
-        </div>
-
-        <div class="card path-card">
-          <h3>2. Policy Setup</h3>
-          <p>
-            Build clear internal rules around approved tools, sensitive data, output review, and safe usage.
-          </p>
-        </div>
-
-        <div class="card path-card">
-          <h3>3. Training</h3>
-          <p>
-            Teach employees and leaders how to use AI responsibly with practical examples and clear expectations.
-          </p>
-        </div>
-
-        <div class="card path-card">
-          <h3>4. Ongoing Support</h3>
-          <p>
-            Keep policies current, answer AI usage questions, and support leadership as tools and risks change.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section>
     <div class="wrap">
-      <h2>Implementation & Training</h2>
+      <h2>Additional Support Available</h2>
       <p class="intro">
-        Policies only work when people understand them. We help your team move from written rules to real behavior.
+        Some organizations only need a review. Others need help rolling out policies, training teams,
+        responding to incidents, or keeping AI usage aligned over time.
       </p>
 
       <div class="grid three">
         <div class="card">
-          <h3>Policy Rollout</h3>
+          <h3>Training & Workshops</h3>
           <p>
-            Turn your AI policy into clear, usable guidelines your team can actually follow.
+            Practical AI safety training for employees and leaders covering safe usage, sensitive data,
+            output review, and real-world examples.
           </p>
         </div>
 
         <div class="card">
-          <h3>Employee Training</h3>
+          <h3>Ongoing Support / Retainer</h3>
           <p>
-            Live sessions covering safe AI use, common risks, sensitive data, prompt habits, and real examples.
+            Continued support for organizations that want policy updates, periodic reviews,
+            and practical guidance as AI tools and risks change.
           </p>
         </div>
 
         <div class="card">
-          <h3>Manager Workshops</h3>
+          <h3>AI Incident Response</h3>
           <p>
-            Help leaders understand how to oversee AI usage, review outputs, and set expectations across departments.
+            Support when AI is used improperly or sensitive data may have been exposed,
+            including assessment, containment guidance, and next steps.
           </p>
         </div>
+      </div>
+
+      <div class="services-link">
+        <a href="services.html">View detailed services →</a>
       </div>
     </div>
   </section>
 
   <section class="soft">
-    <div class="wrap">
-      <h2>AI Incident Response</h2>
-      <p class="intro">
-        If sensitive data is exposed or AI is used improperly, speed matters. We help assess what happened,
-        reduce further risk, and put immediate controls in place.
-      </p>
-
-      <div class="grid three">
-        <div class="card">
-          <h3>Immediate Assessment</h3>
-          <p>
-            Identify what happened, what tools were involved, what data may be affected, and where exposure exists.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Containment Plan</h3>
-          <p>
-            Define immediate steps to reduce further risk, limit continued exposure, and regain internal control.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Recovery Guidance</h3>
-          <p>
-            Provide next steps, documentation support, and policy updates to help prevent repeat issues.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <h2>Ongoing AI Safety Support</h2>
-      <p class="intro">
-        AI tools change fast. Policies should not be written once and forgotten. For organizations that want continued guidance,
-        ShieldStone Group offers ongoing support to keep AI usage safe, structured, and aligned with internal standards.
-        <br><strong>Available as monthly support or retainer.</strong>
-      </p>
-
-      <div class="grid three">
-        <div class="card">
-          <h3>Policy Updates</h3>
-          <p>
-            Keep your AI usage rules current as new tools, risks, and business needs appear.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Periodic Reviews</h3>
-          <p>
-            Review how AI is being used over time and identify new gaps before they become bigger problems.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Practical Guidance</h3>
-          <p>
-            Get help answering AI usage questions when your team is unsure what is safe, appropriate, or approved.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="soft">
-    <div class="wrap">
-      <h2>What We Help Prevent</h2>
-
-      <div class="grid two">
-        <div class="card">
-          <h3>Common AI Risks</h3>
-          <ul>
-            <li>Employees using personal AI accounts for work</li>
-            <li>Sensitive information being entered into public tools</li>
-            <li>AI-generated content being used without review</li>
-            <li>No approved tool list or usage standards</li>
-            <li>No documentation if questions come up later</li>
-            <li>No response plan if AI-related data exposure occurs</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>What You Walk Away With</h3>
-          <ul>
-            <li>A clearer picture of how AI is being used</li>
-            <li>Simple rules your team can understand</li>
-            <li>Action steps to reduce avoidable risk</li>
-            <li>A foundation for future AI governance</li>
-            <li>Confidence that you are no longer guessing</li>
-            <li>Options for training, implementation, and ongoing support</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
     <div class="wrap">
       <h2>How It Works</h2>
       <p class="intro">
@@ -640,9 +495,10 @@
         </div>
 
         <div class="card step">
-          <h3>Paid Review</h3>
+          <h3>Focused Review</h3>
           <p>
-            If there is a real need, we perform a deeper review and gather the information needed to understand your AI usage.
+            If there is a real need, we perform a deeper review and gather the information needed
+            to understand your AI usage.
           </p>
         </div>
 
