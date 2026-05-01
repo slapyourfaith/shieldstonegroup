@@ -18,9 +18,7 @@
       --accent: #1f6feb;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -35,7 +33,7 @@
     }
 
     .nav {
-      max-width: 1050px;
+      max-width: 1100px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
@@ -57,15 +55,22 @@
     }
 
     .hero {
-      background: linear-gradient(135deg, var(--navy), var(--blue));
+      background:
+        linear-gradient(90deg, rgba(7,31,51,0.98) 0%, rgba(7,31,51,0.92) 43%, rgba(7,31,51,0.55) 100%),
+        url("hero-shield.png");
+      background-size: cover;
+      background-position: center right;
       color: white;
-      padding: 80px 20px 88px;
-      text-align: center;
+      padding: 92px 20px 100px;
     }
 
     .hero-inner {
-      max-width: 920px;
+      max-width: 1100px;
       margin: 0 auto;
+    }
+
+    .hero-content {
+      max-width: 720px;
     }
 
     .tagline {
@@ -77,6 +82,7 @@
       color: #dbeafe;
       font-weight: 700;
       font-size: 0.92rem;
+      background: rgba(255,255,255,0.08);
     }
 
     .hero h1 {
@@ -87,9 +93,8 @@
     }
 
     .hero p {
-      max-width: 760px;
-      margin: 0 auto 18px;
-      font-size: 1.2rem;
+      margin: 0 0 18px;
+      font-size: 1.18rem;
       line-height: 1.6;
       color: #dbeafe;
     }
@@ -155,13 +160,8 @@
     }
 
     @media (min-width: 760px) {
-      .grid.three {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .grid.two {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .grid.three { grid-template-columns: repeat(3, 1fr); }
+      .grid.two { grid-template-columns: repeat(2, 1fr); }
     }
 
     .card {
@@ -268,11 +268,24 @@
       margin-top: 22px;
     }
 
-    @media (max-width: 520px) {
+    @media (max-width: 700px) {
+      .hero {
+        background:
+          linear-gradient(180deg, rgba(7,31,51,0.98), rgba(7,31,51,0.88)),
+          url("hero-shield.png");
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+      }
+
+      .hero-content {
+        max-width: 100%;
+      }
+
       .btn {
         display: block;
         margin: 10px auto 0;
-        max-width: 280px;
+        max-width: 300px;
       }
 
       .btn.secondary {
@@ -293,21 +306,23 @@
 
   <section class="hero">
     <div class="hero-inner">
-      <div class="tagline">Built for small and mid-size businesses adopting AI without formal policy</div>
+      <div class="hero-content">
+        <div class="tagline">AI safety, policy, and risk clarity for organizations using AI</div>
 
-      <h1>Your Team Is Already Using AI. Do You Know the Risk?</h1>
+        <h1>Your Team Is Already Using AI. Do You Know the Risk?</h1>
 
-      <p>
-        ShieldStone Group helps businesses identify unsafe AI usage, protect sensitive information,
-        and put simple policies in place before small mistakes become expensive problems.
-      </p>
+        <p>
+          ShieldStone Group helps organizations identify unsafe AI usage, prevent data exposure,
+          and implement clear policies before small mistakes turn into costly problems.
+        </p>
 
-      <p class="urgency">
-        Most companies already have AI risk — they just don’t know it yet.
-      </p>
+        <p class="urgency">
+          Most companies already have AI risk — they just don’t know it yet.
+        </p>
 
-      <a class="btn" href="#contact">Get Your Free AI Risk Check</a>
-      <a class="btn secondary" href="#review">See What We Review</a>
+        <a class="btn" href="#contact">Get Your Free AI Risk Check</a>
+        <a class="btn secondary" href="#review">See What We Review</a>
+      </div>
     </div>
   </section>
 
@@ -352,7 +367,7 @@
     <div class="wrap">
       <h2>Start With an AI Risk Review</h2>
       <p class="intro">
-        A practical review designed to show where your company is exposed and what to fix first.
+        A practical review designed to show where your organization is exposed and what to fix first.
       </p>
 
       <div class="offer-box">
@@ -381,7 +396,7 @@
     <div class="wrap">
       <h2>How It Works</h2>
       <p class="intro">
-        Simple, practical, and built for busy businesses that need clarity without a long consulting process.
+        Simple, practical, and built for busy organizations that need clarity without a long consulting process.
       </p>
 
       <div class="grid three steps">
@@ -446,11 +461,10 @@
     <div class="wrap">
       <h2>Get Your Free AI Risk Check</h2>
       <p>
-        If your business is using AI tools and you do not have a clear policy in place,
+        If your organization is using AI tools and you do not have a clear policy in place,
         now is the time to get ahead of it.
       </p>
 
-      <!-- Replace this later with Calendly if you want -->
       <a class="btn" href="mailto:contact@shieldstonegroup.com?subject=Free AI Risk Check">
         Schedule Your Free AI Risk Check
       </a>
