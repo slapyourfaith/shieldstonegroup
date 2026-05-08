@@ -257,23 +257,25 @@
 
     .step {
       position: relative;
-      padding-left: 58px;
+      padding-top: 64px;
     }
 
     .step::before {
       counter-increment: step;
       content: counter(step);
       position: absolute;
-      left: 0;
+      left: 26px;
       top: 22px;
-      width: 38px;
-      height: 38px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       background: var(--accent);
       color: white;
       display: grid;
       place-items: center;
       font-weight: 900;
+      font-size: 0.95rem;
+      box-shadow: 0 8px 18px rgba(31,111,235,0.25);
     }
 
     .cta {
@@ -617,5 +619,4 @@
 </script>
 
 </body>
-</html> 
-
+</html>
